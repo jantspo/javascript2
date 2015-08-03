@@ -151,6 +151,36 @@
 					<p>It's important to note that you should still try to make all global variable declarations at the top of your code for readability and clarity.</p>
 
 					<h2>Functions and Hoisting</h2>
+					<p>So what about functions and hoisting? You're probably aware four ways of creating functions:</p>
+					<pre><code>
+						//set to variable
+						var sayHello = function(){
+							console.log('Hello');
+						}
+						
+						sayHello();
+							
+						//declared function
+						function sayGoodbye(){
+							console.log('Goodbye');
+						}
+
+						sayGoodbye();
+
+						//anomymous function
+						
+						setTimeout(function(){
+							console.log('Hello again');
+						}, 1000);
+
+						//immediately invoked function expression
+						(function(){
+							console.log('Goodbye again');
+						}());
+					</code></pre>
+
+					<p>So how does hoisting affect functions? If we ran the code above it would not throw any errors. However, if we placed our function calls for the first two functions we would get very different results. The first function, <code>sayHello()</code> will throw an error that <code>sayHello()</code> is not a function. This is because even though the <code>var sayHello</code> declaration is hoisted to the top, it's implementation is not, so when the function call comes first it doesn't know that it's a function.</p>
+					<p>However, if we call are <code>sayGoodbye</code> function above it's declaration it will run without any issues because a declared function hoists the entire function to the top of the code.</p>
 				</div>
 			</div>
 		</div>
