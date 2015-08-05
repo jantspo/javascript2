@@ -1,0 +1,43 @@
+
+h1, h2{
+	border-bottom: 2px solid #F8D90B;
+}
+p{
+	font-size: 18px;
+}
+
+.navbar{
+	border-radius: 0;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+.navbar-default {
+    background-color: #7A1501;
+    border-color: #F8D90B;
+}
+
+.navbar-default .navbar-brand{
+	color: #fff;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #F8D90B;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #fff;
+}
+
+.navbar-default .navbar-nav>li>, .navbar-default .navbar-nav>li>a{
+	color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color: #F8D90B;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #7A1501;
+    background-color: #F8D90B;
+}

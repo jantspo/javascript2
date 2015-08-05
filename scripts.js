@@ -1,14 +1,6 @@
-//set to variable
-
-
-var sayHello = function(){
-	console.log('Hello');
+function Car(make, model, year, numOfDoors, engineType){
+	this.make = make;
+	this.model = model;
+	this.numOfDoors = numOfDoors;
+	this.engineType = engineType;
 }
-
-
-	sayGoodbye();
-//declared function
-function sayGoodbye(){
-	console.log('Goodbye');
-}
-

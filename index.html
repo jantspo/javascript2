@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<header>
@@ -41,7 +42,7 @@
 		            <li><a href="">Day 12 Wrap Up</a></li>
 		          </ul>
 		        </li>
-		        <li><a href="">Resources</a></li>
+		        <li><a href="resources.html">Resources</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -51,10 +52,9 @@
 		<div class="container">
 			<div class="row">
 				<h1>Javascript 2</h1>
-				<h2>Day 1</h2>
+				<h3>Day 1 - Review</h3>
 			</div>
 			<div class="row">
-				<h3>Review</h3>
 				<h4>Links</h4>
 				<ul>
 					<li>
@@ -92,42 +92,42 @@
 					<h2>Scope</h2>
 					<p>Scope is the availability of a variable within your code. There's two kinds of scope in vanilla javascript: global and local. The global scope is available to any functions in your code, while local scope is available only within the code blick it's created in.</p>
 					<pre><code>
-						//Global Scope
-						var x = 5;
+//Global Scope
+var x = 5;
 
-						function sayX(){
-							//Local Scope
-							var x = 10;
-							console.log(x);
-						}
-						
-						sayX();
+function sayX(){
+	//Local Scope
+	var x = 10;
+	console.log(x);
+}
 
-						console.log(x);
+sayX();
+
+console.log(x);
 					</code></pre>
 
 					<p>If we were to run the code above we would get two different messages in our console. This is because the variable we declared inside our function exists only within our function. Using local variables is  a good practice and helps keep the global namespace clear of uneccessary variables and also to preserve the value of variables.</p>
 					<p>Another way to look at: let's say we had a math function set up for an eCommerce site that would take a total and add sales tax to it. While we could set the sales tax % to a global variable we know it's not likely to change anytime soon and we'd like to prevent it from accidently being changed somewhere else in the code. So how would we set this up?</p>
 					
 					<pre><code>
-						var salesTax = 0.0825;
+var salesTax = 0.0825;
 
-						function addTax(subTotal){
-							return (subTotal * salesTax) + subTotal;
-						}
+function addTax(subTotal){
+	return (subTotal * salesTax) + subTotal;
+}
 
-						addTax(15.00);
+addTax(15.00);
 					</code></pre>	
 
 					<p>If we ran this code it would return a correct value, but again, we're using up a name on our global scope that could be instead set locally, in our function.</p>
 
 					<pre><code>
-						function addTax(subTotal){
-							var salesTax = 0.0825;
-							return (subTotal * salesTax) + subTotal;
-						}
+function addTax(subTotal){
+	var salesTax = 0.0825;
+	return (subTotal * salesTax) + subTotal;
+}
 
-						addTax(15.00);
+addTax(15.00);
 
 					</code></pre>
 
@@ -137,13 +137,13 @@
 					<h2>Hoisting</h2>
 					<p>Hoisting is an important concept to understand about Javascript. So what is it? Suppose we have the following code:</p>
 					
-					<pre>
-						<code>
-							b = 5;
-							var b;
-							console.log(b);
-						</code>
-					</pre>
+<pre>
+	<code>
+b = 5;
+var b;
+console.log(b);
+	</code>
+</pre>
 					
 					<p>... what would you expect to happen? If you expected <code>5</code> then you'd be right.</p>
 					<p>Why does this work? When a javascript file is loaded, declarations, the <code>var b</code> from above, are pulled from their location in the code and <em>hoisted</em> to the top. So in the above example, the <code>var b</code> is pulled to the top and made globally available before the code <em>implements it</em>, the <code>b = 5;</code>. Since the variable is made available before being implemented it is assigned without issue and the <code>console.log</code> works without throwing any errors.</p>
@@ -151,32 +151,32 @@
 					<p>It's important to note that you should still try to make all global variable declarations at the top of your code for readability and clarity.</p>
 
 					<h2>Functions and Hoisting</h2>
-					<p>So what about functions and hoisting? You're probably aware four ways of creating functions:</p>
+					<p>So what about functions and hoisting? You're probably aware of four ways of creating functions:</p>
 					<pre><code>
-						//set to variable
-						var sayHello = function(){
-							console.log('Hello');
-						}
-						
-						sayHello();
-							
-						//declared function
-						function sayGoodbye(){
-							console.log('Goodbye');
-						}
+//set to variable
+var sayHello = function(){
+	console.log('Hello');
+}
 
-						sayGoodbye();
+sayHello();
+	
+//declared function
+function sayGoodbye(){
+	console.log('Goodbye');
+}
 
-						//anomymous function
-						
-						setTimeout(function(){
-							console.log('Hello again');
-						}, 1000);
+sayGoodbye();
 
-						//immediately invoked function expression
-						(function(){
-							console.log('Goodbye again');
-						}());
+//anomymous function
+
+setTimeout(function(){
+	console.log('Hello again');
+}, 1000);
+
+//immediately invoked function expression
+(function(){
+	console.log('Goodbye again');
+}());
 					</code></pre>
 
 					<p>So how does hoisting affect functions? If we ran the code above it would not throw any errors. However, if we placed our function calls for the first two functions we would get very different results. The first function, <code>sayHello()</code> will throw an error that <code>sayHello()</code> is not a function. This is because even though the <code>var sayHello</code> declaration is hoisted to the top, it's implementation is not, so when the function call comes first it doesn't know that it's a function.</p>
@@ -185,6 +185,9 @@
 			</div>
 		</div>
 	</main>
+	<footer>
+		&copy; 2015. All rights reserved.
+	</footer>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>

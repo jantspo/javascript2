@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+		  <div class="container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Geekwise Academy - Javascript 2</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="index.html">Day 1 - Review</a></li>
+		            <li><a href="day2.html">Day 2 - Review/Setup</a></li>
+		            <li><a href="day3.html">Day 3 - Objects</a></li>
+		            <li><a href="day4.html">Day 4 - Object Constructors</a></li>
+		            <li><a href="day5.html">Day 5 - Using Objects</a></li>
+		            <li><a href="day6.html">Day 6 - Intro to Angular</a></li>
+		            <li><a href="">Day 7 - Modules/Controllers</a></li>
+		            <li><a href="">Day 8 - Services</a></li>
+		            <li><a href="">Day 9 - Factories</a></li>
+		            <li><a href="">Day 10 - Directives</a></li>
+		            <li><a href="">Day 11 - Angular Review</a></li>
+		            <li><a href="">Day 12 Wrap Up</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="resources.html">Resources</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<h1>Javascript 2</h1>
+				<h3>Day 4 - Object Constructors</h3>
+			</div>
+			<div class="row">
+				<h4>Links</h4>
+				<ul>
+					<li>
+						<a href=""></a>
+					</li>
+					<li>
+						<a href=""></a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Object Prototypes/Constructors</h2>
+					<p>We learned about objects and how to create them and access their values, but what if we want more functionality out of objects? What if we know we're going to need more than one object with similar properties, but with different values?</p>
+					<p>Enter object constructors. Before we talked about real world examples of objects. Let's look at cars again. We said yesterday that cars have makes, models, years, number of doors, etc. These aren't things unique to a single car, but properties that every car has. If we made a list of every property a car can have we'd end up with a long list with many of the items being things that some cars have while others don't. In the end we end up with a list that provides a general idea of what a car is. It's not a specific car, but it's a good of the properties a specific car would have.</p>
+
+					<p>An object constructor is much like that list. Another way to think about it is that in new housing development there are many different houses with different styles. But if you really look you'll notice that even though each house might be a different color or have different style doors, the reality is that all the houses in the neighborhood are based on 4 or 5 basic models and layouts. These 4 or 5 models each have their own blueprint that every house in the neighborhood is built off of. These blueprints are like object constructor. Object constructors are blueprints for objects and the properties they have. </p>
+
+					<p>Let's make a car object constructor so we can create as many car objects as we'd like.</p>
+					<pre><code>
+function Car(make, model, year, numOfDoors, engineType){
+	this.make = make;
+	this.model = model;
+	this.numOfDoors = numOfDoors;
+	this.engineType = engineType;
+}
+					</code></pre> 
+					<p>Done. Now let's break it down. First we declare a function named Car. Notice the capitalization? Object constructor are created with a capitalized first letter. This makes it clear for people looking at our code that this function is an object constructor.</p>
+					<p>Next we tell the function what arguments to expect. In this case it should expect a make, model, numOfDoors, and  engineType. Inside our code block we tell the function what to with the arguments we pass in. If we are setting the arguments to properties then we specify what arguments are going to set to which properties using <code>this.propertyName = argument;</code>.</p>
+
+					So now we have a basic object constructor, but no objects. We can create new objects by using the new keyword.
+
+					<pre><code>
+var myCar = new Car('Mazda', 3, 4, "inline-4");
+					</code></pre>
+
+					<p>In this example we are declaring a variable named myCar and implementing a new instance of our <code>Car</code>. Note that we are not using are object constructor to store this object, but simply using it to create the new object instance.</p>
+
+
+					<h2>Object Protoype Methods</h2>
+					<p></p>
+				</div>	
+			</div>
+		</div>
+	</main>
+	<footer >
+		&copy; 2015. All rights reserved.
+	</footer>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>
+

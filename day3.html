@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+		  <div class="container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Geekwise Academy - Javascript 2</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="index.html">Day 1 - Review</a></li>
+		            <li><a href="day2.html">Day 2 - Review/Setup</a></li>
+		            <li><a href="day3.html">Day 3 - Objects</a></li>
+		            <li><a href="day4.html">Day 4 - Object Constructors</a></li>
+		            <li><a href="day5.html">Day 5 - Using Objects</a></li>
+		            <li><a href="day6.html">Day 6 - Intro to Angular</a></li>
+		            <li><a href="">Day 7 - Modules/Controllers</a></li>
+		            <li><a href="">Day 8 - Services</a></li>
+		            <li><a href="">Day 9 - Factories</a></li>
+		            <li><a href="">Day 10 - Directives</a></li>
+		            <li><a href="">Day 11 - Angular Review</a></li>
+		            <li><a href="">Day 12 Wrap Up</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="resources.html">Resources</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<h1>Javascript 2</h1>
+				<h3>Day 3 - Objects</h3>
+			</div>
+			<div class="row">
+				<h4>Links</h4>
+				<ul>
+					<li>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Working with Objects</a>
+					</li>
+					<li>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer">Object Initializers</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Objects</h2>
+					<p>Objects are (nearly) everything in javascript. Functions, arrays, and even string are all types of objects with their own properties and methods.</p>
+
+					<p>So what are they exactly? Objects at the simplest level are data containers that use a key/value pairing called properties to store data. On a higher level objects can handle much, if not nearly all, of the functionality you might need in a program. How do we create an object? We use <code>{}</code> syntax:</p>
+					<pre><code>
+var objectName = {
+	key: value,
+	key: value,
+	key: value,
+	// etc.
+};
+					</code></pre>
+					<p>Much like variables and arrays, objects can hold strings, integers, arrays, and other even other objects. When an object is set to a variable it is an object literal. The properties of an object can be accessed using <code>.</code> notation. Remeber how we get the length of an array? <code>myArray.length</code>. That's actually using a method on the array object to retrieve that property. We'll talk about methods more later, but for now just focus on the syntax. So let's create an object with actual values and call those values:</p>
+					<pre><code>
+var person = {
+	'firstName': 'John',
+	'lastName': 'Smith',
+	'age': 30,
+	'interests': [
+			'coding',
+			'sports',
+			'swimming'
+			 ],
+	'address': {
+			'streetAddress': '345 Sesame St.',
+			'city': 'New York',
+			'state': 'NY',
+			'zipCode': 98989
+		   }	
+};
+					</code></pre>
+					<p>If we want to get a specific value on our object we use <code>.keyName</code>. Let's say we want the object's first name. The syntax would be person.firstName. If we wanted all of the object's interests then we would use<code>person.interests</code>, but if we wanted a specific item from the array we would use <code>person.interests[//index we are looking for]</code>, ie. <code>person.interests[0]</code> would return <code>"coding"</code>. Accessing objects and objects values on an object is done the same way as accessing the properties of an object itself. <code>person.address</code> will return the address object on the person object, but <code>person.address.city</code> will simply return <code>"New York"</code></p>
+
+					<h2>Looking at Objects Another Way</h2>
+					<p>That may be a lot to take in so let's talk objects from a real world perspective.</p>
+					<p> If you look around you'll see all kinds of things. Trees, cars, people. These are all real world examples of objects and all of these objects have properties. Trees have types of leaves, bark color, height, etc. Cars have makes, models, engine types, number of doors. And people, like our person object above, have names, personalities, addresses, ages, etc. And just like a person or tree get's a little older everyear, changing their "age" values, an javascript object's values can be changed.</p>
+					<p>A year has passed and our person in the example above needs to have his age updated. How do we do that? We set the property's value the same way we set a variable. <code>person.age = 31;</code> Using this syntax, values in an object can be replaced or overwritten.</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer >
+		&copy; 2015. All rights reserved.
+	</footer>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
