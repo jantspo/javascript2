@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+		  <div class="container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Geekwise Academy - Javascript 2</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="index.html">Day 1 / 2 - Review</a></li>
+		            <li><a href="day3.html">Day 3 - Objects</a></li>
+		            <li><a href="day4.html">Day 4/5 - Object Constructors</a></li>
+		            <li><a href="day6.html">Day 6 - Intro to Angular</a></li>
+		            <li><a href="day7.html">Day 7 - Modules/Controllers</a></li>
+		            <li><a href="">Day 8 - Services</a></li>
+		            <li><a href="">Day 9 - Factories</a></li>
+		            <li><a href="">Day 10 - Directives</a></li>
+		            <li><a href="">Day 11 - Angular Review</a></li>
+		            <li><a href="">Day 12 Wrap Up</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="resources.html">Resources</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<h1>Javascript 2</h1>
+				<h3>Day 6 - Intro to AngularJS</h3>
+			</div>
+			<div class="row">
+				<h4>Links</h4>
+				<ul>
+					<li>
+						<a href="https://angularjs.org/">AngularJS</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>What is AngularJS</h2>
+					<p>AngularJS is a powerful Javascript framework that allows for the creation of dynamic websites by extending HTML, using data-binding to update data on the page, and allowing for a project to continually grow and scale by keeping functionality grouped in modular files.</p>
+					<h2>MVC</h2>
+					<p>MVC, or <b>M</b>odel <b>V</b>iew <b>C</b>ontroller, is an architectual pattern used in modern web apps. The core concept behind MVC is the seperation of a website's data, the models, it's actual pages, or views, and the how the data is passed to the view, the controller.</p>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<img class="img-responsive" src="img/mvc.png" alt="">
+						</div>
+					</div>
+					<p>As the diagram above demonstrates, the controller handles the flow of data to and from the user, either by retrieving from or passing data to the model. This happens asynchronously, allowing a view to be continuously updated with new information without the need to refresh or reload the view. Think of the last time you used gmail or amazon. Ever notice that when you cycle through pages of emails or product lists that when you click next there's a slight delay as the the new data loads instead of the whole page just refreshing? This is mvc in action. The data on the page is loaded as the request for more is made, but once it's loaded on the page it persists, thus why looking through older email's will trigger a load bar, but once loaded you can freely move forward and back through the loaded data.</p>
+					<h2>Basic Angular Anatomy</h2>
+					<p>The core of any AngularJS app is the module. An angular module is what all the other pieces are attached you. A module can have other modules
+						as dependencies, allowing for small, functional modules that can be pieced together and re-used as needed.
+					</p>
+					<p>Controllers are where the logic for handling the views that the user sees. They should be kept as slim as possible, with any logic more complicated
+						than simply handling what data is displayed being set up in other places.</p>
+					<p>Service and factories are where much of the logic will actually take place. It's here that we will typically make our requests for data from the server and
+						perform any data manipulation specific to the objects the service is responsible for. Factories are similar to Services, but are typically used for creating objects.
+						For instance, you might have a users.service.js that handles retrieving and handling users, but these users can be passed to a factory that will then protoype additional
+						functionality that might be more specific to a single user, such as validation.</p>
+					<p>Directives are used to handle specific html and data manippulation. A directive can be used to create custom attributes or html tags that can be used in any view
+					 	 where the data can be re-used.</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer >
+		&copy; 2015. All rights reserved.
+	</footer>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
+

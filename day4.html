@@ -28,11 +28,9 @@
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <li><a href="index.html">Day 1 - Review</a></li>
-		            <li><a href="day2.html">Day 2 - Review/Setup</a></li>
+		            <li><a href="index.html">Day 1/2 - Review</a></li>
 		            <li><a href="day3.html">Day 3 - Objects</a></li>
-		            <li><a href="day4.html">Day 4 - Object Constructors</a></li>
-		            <li><a href="day5.html">Day 5 - Using Objects</a></li>
+		            <li><a href="day4.html">Day 4/5 - Object Constructors</a></li>
 		            <li><a href="day6.html">Day 6 - Intro to Angular</a></li>
 		            <li><a href="">Day 7 - Modules/Controllers</a></li>
 		            <li><a href="">Day 8 - Services</a></li>
@@ -80,6 +78,7 @@ function Car(make, model, year, numOfDoors, engineType){
 	this.model = model;
 	this.numOfDoors = numOfDoors;
 	this.engineType = engineType;
+	this.engineRunning = false;
 }
 					</code></pre> 
 					<p>Done. Now let's break it down. First we declare a function named Car. Notice the capitalization? Object constructor are created with a capitalized first letter. This makes it clear for people looking at our code that this function is an object constructor.</p>
@@ -95,7 +94,43 @@ var myCar = new Car('Mazda', 3, 4, "inline-4");
 
 
 					<h2>Object Protoype Methods</h2>
-					<p></p>
+					<p>We have a basic object protoype, but now we need to add some methods to it. Methods are function unique to objects. To add a method we use <code>.prototype.methodName</code>. So let's give our object prototype some methods.</p>
+					<pre><code>
+Car.prototype.startEngine = function(){
+	if(this.engineRunning === false){
+		this.engineRunning = true;
+	}else{
+		alert('Loud obnoxious grinding noises');
+	}
+}
+
+Car.prototype.stopEngine = function(){
+	if(this.engineRunning === true){
+		this.engineRunning = false;
+	}else{
+		alert('Nothing happened');
+	}
+}
+
+Car.prototype.isConvertable = function(val){
+	if(val === true || val === false){
+		this.convertable = val;
+		if(this.convertable === true){
+			this.roof = 'raised';
+		}
+	}else{
+		alert("Must be a true or false value");
+	}
+}
+
+Car.prototype.lowerTop = function(){
+	if(this.isConvertable === true){
+		this.top = 'lowered';
+	}
+}
+					</code></pre>
+					<p>So now our car prototype has some methods. If we create a new instance of our car it will have access to all of these methods. Notice the edge casing in some of the methods? If you look at our last method, <code>Car.prototype.lowerTop</code>, what do you think would happen if you called it directly after creating a new Car? Nothing. The method is dependent on a property that is set in another method. Now if we called the <code>isConvertable</code> method and set it to false it would still do nothing because we haven't added any edge casing for if <code>this.convertable</code> is false. If we were to set it to true, however, and then call the lowerTop method it would work as intended.</p>
+					<p>It's important to remember that methods can and often are meant to extend the functionality of an object as necessary. Not all cars are going to be convertables, but if they are one then they automatically have access to the functionality of raising and lowering their roofs. It's important to leep this in mind when <b>method chaining</b>. If you are calling multiple methods on an object in a row then it's important to be sure to call them in the order that is needed to make them work.</p>
 				</div>	
 			</div>
 		</div>
